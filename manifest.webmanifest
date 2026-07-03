@@ -1,0 +1,31 @@
+{
+  "name": "Casos Clínicos Ginecología — Navy Gold",
+  "short_name": "Gineco Casos",
+  "description": "PWA interactiva de estudio de casos clínicos de ginecología con respuesta única seleccionada.",
+  "start_url": "./index.html#home",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#F7F2E8",
+  "theme_color": "#071A2D",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "education",
+    "medical",
+    "productivity"
+  ]
+}

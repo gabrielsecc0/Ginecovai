@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071A2D">
+  <meta name="description" content="PWA interactiva de casos clínicos de ginecología con respuestas individuales.">
+  <title>Casos Clínicos Ginecología — PWA</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navegación de casos">
+      <section class="brand">
+        <p class="kicker">Secco Core / Navy & Gold</p>
+        <h1>Casos clínicos<br>Ginecología</h1>
+        <p>Estudia por caso, revela una sola respuesta y guarda tu progreso.</p>
+        <div class="stats"><div class="stat"><strong id="caseCount">—</strong><span>casos</span></div><div class="stat"><strong id="questionCount">—</strong><span>preguntas</span></div><div class="stat"><strong>OFF</strong><span>line</span></div></div>
+      </section>
+      <section class="sidebar-section"><label for="searchInput">Buscar</label><input id="searchInput" class="search" type="search" placeholder="SOP, amenorrea, CA ovario…"></section>
+      <section class="sidebar-section"><label for="tagFilter">Área</label><select id="tagFilter" class="select"></select></section>
+      <section class="sidebar-section"><label>Modo</label><div class="mode-grid"><button class="seg active" data-mode="exam">Examen</button><button class="seg" data-mode="study">Estudio</button></div></section>
+      <section class="sidebar-section"><label>Casos</label><ul id="caseList" class="case-list"></ul></section>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <button class="btn ghost mobile-menu" id="mobileMenu">☰ Casos</button>
+        <div class="progress-wrap" style="min-width:min(420px,100%);flex:1"><div class="progress-line"><div id="progressBar"></div></div><div id="progressText" class="progress-label">—</div></div>
+        <div class="topbar-actions"><button class="btn small gold" id="homeBtn">Inicio</button><button class="btn small ghost" id="randomBtn">Aleatoria</button><button class="btn small ghost" id="installBtn">Instalar</button><button class="btn small ghost" id="printBtn">Imprimir</button><button class="btn small ghost" id="exportBtn">Exportar progreso</button><button class="btn small ghost" id="resetBtn">Reiniciar</button></div>
+      </header>
+      <div id="caseRoot"></div>
+    </main>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+  <aside class="drawer" id="drawer" aria-live="polite" aria-label="Respuesta seleccionada">
+    <button class="btn small ghost drawer-close" id="drawerClose">Cerrar</button>
+    <div class="drawer-head"><p class="kicker">Respuesta única</p><h3 id="drawerTitle">Pregunta</h3><p id="drawerSub" style="margin:4px 0 0;color:#F0E7C7"></p></div>
+    <div class="drawer-body"><div id="drawerQuestion" class="drawer-question"></div><div id="drawerAnswer" class="drawer-answer"></div></div>
+  </aside>
+  <div class="toast" id="toast"></div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
